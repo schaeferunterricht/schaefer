@@ -5,9 +5,21 @@
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 0 0,#fff0d8,transparent 40%),radial-gradient(circle at 100% 20%,#f6e0eb,transparent 40%),#f9f5ef;color:var(--ink);font-family:'Trebuchet MS',Arial,sans-serif}
 button,input{font:inherit}button{cursor:pointer}header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;max-width:1120px;margin:auto;padding:18px 20px}a{color:#406b78;text-decoration:none}.back,.chip{background:white;border:2px solid #e9dbe1;border-radius:28px;padding:11px 16px;font-weight:bold}.chip{background:#fff0bf}
 main{max-width:1100px;margin:0 auto 60px;padding:0 18px}.hero{text-align:center;padding:10px 8px 22px}.eyebrow{letter-spacing:2px;font-weight:900;color:#b77a83}.hero h1{font-size:clamp(35px,6vw,65px);margin:6px 0;color:#475f72}.hero p{font-size:19px}.peng{font-size:64px}.case{background:#fffefa;border:2px solid #f0dfe4;border-radius:27px;padding:clamp(20px,4vw,40px);box-shadow:0 12px 35px #4e465019}.case h2{font-size:clamp(25px,4vw,36px);margin:8px 0 15px}.note{background:#f7e9ef;border-radius:17px;padding:16px;line-height:1.55}.button{background:#678f86;color:white;border:0;border-radius:16px;padding:13px 19px;font-weight:900;box-shadow:0 4px 0 #476a64}.button:disabled{opacity:.45;cursor:not-allowed}.button.alt{background:#d88492;box-shadow:0 4px 0 #ae6471}.button.soft{background:#e8effa;color:#354c70;box-shadow:none}.hidden{display:none!important}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}.mission{border:2px solid #e5dce5;border-radius:23px;padding:21px;background:#fff}.mission:nth-child(3n+1){background:#fff1e1}.mission:nth-child(3n+2){background:#eaf4f5}.mission:nth-child(3n){background:#f2ebfa}.mission .num{font-size:13px;letter-spacing:2px;font-weight:900}.mission h3{font-size:23px;margin:8px 0}.mission p{min-height:45px;line-height:1.45}.mission .button{margin-top:6px}.stamp{font-size:13px;color:#687487;font-weight:bold}.progress{height:12px;background:#e6e9f1;border-radius:20px;overflow:hidden;margin:18px 0}.progress>div{height:100%;background:#8fbab0;width:0;transition:width .2s}.topline{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.question{font-size:clamp(22px,3vw,30px);margin:24px 0}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.choice,.word{background:#fff;border:2px solid #d4dce9;border-radius:14px;padding:16px;min-height:55px;color:var(--ink);font-size:20px}.choice.good,.word.good{background:#cceedd;border-color:#63ad87}.choice.bad,.word.bad{background:#ffe0dc;border-color:#d98981}.word.selected{background:#fbe4a7;border-color:#d4a548}.feedback{font-size:19px;font-weight:bold;min-height:48px;margin:20px 0 10px}.words{display:flex;gap:9px;flex-wrap:wrap;line-height:2}.word{padding:8px 11px;min-height:0}.evidence{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}.evidence span{border-radius:15px;background:#f4e6ed;padding:14px;text-align:center;font-weight:bold}.small{font-size:14px;color:#647182}.report{background:#f8f2e4;padding:20px;border-radius:16px;line-height:1.8}.textinput{border:2px solid #d4dce9;border-radius:13px;padding:14px;width:100%;max-width:400px;font-size:22px}.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.foot{text-align:center;color:#7d7c81;padding:25px} @media(max-width:650px){.grid,.choices{grid-template-columns:1fr}.evidence{grid-template-columns:1fr}.mission p{min-height:0}}
-</style></head><body>
+</style>
+<style>
+#pit-guide{position:fixed;right:16px;bottom:16px;z-index:99999;display:flex;align-items:end;gap:8px;max-width:min(390px,calc(100vw - 24px));font-family:'Trebuchet MS',Arial,sans-serif;color:#334354}
+#pit-guide .pit-face{border:3px solid #fff;background:#e6f3f0;border-radius:50%;width:76px;height:76px;flex-shrink:0;font-size:48px;box-shadow:0 6px 22px #37485a33;cursor:pointer}
+#pit-guide .pit-bubble{background:#fffef9;border:2px solid #f0d6e2;border-radius:22px 22px 6px 22px;padding:14px 15px;box-shadow:0 7px 25px #3440542b;font-size:15px;line-height:1.4}
+#pit-guide .pit-bubble strong{display:block;color:#ba718a;font-size:15px;margin-bottom:4px}
+#pit-guide .pit-actions{display:flex;gap:8px;margin-top:10px;align-items:center}
+#pit-guide .pit-actions button{border:0;border-radius:14px;background:#dceee9;padding:8px 12px;color:#304c4a;font-weight:bold;font-size:13px;cursor:pointer}
+#pit-guide .pit-actions .pit-close{background:#f4e5ed}
+#pit-guide.pit-minimized .pit-bubble{display:none}
+@media(max-width:600px){#pit-guide{right:7px;bottom:7px;max-width:calc(100vw - 14px)}#pit-guide .pit-face{width:58px;height:58px;font-size:35px}#pit-guide .pit-bubble{font-size:13px;padding:10px}}
+</style>
+</head><body>
 <header><a class="back" href="index.html">← Zur Lernwelt</a><span class="chip" id="total">⭐ 0 / 90 Sterne</span></header>
-<main><div class="hero"><div class="peng">🐧🔎</div><div class="eyebrow">GEHEIME WÖRTERAKTE · KLASSE 2</div><h1>Adjektiv-Detektive</h1><p>Spürnasen gesucht! Hilf Pinguin Pino, die Geheimnisse der Wiewörter zu lösen.</p></div>
+<main><div class="hero"><div class="peng">🐧🔎</div><div class="eyebrow">GEHEIME WÖRTERAKTE · KLASSE 2</div><h1>Adjektiv-Detektive</h1><p>Spürnasen gesucht! Hilf Pinguin Pit, die Geheimnisse der Wiewörter zu lösen.</p></div>
 <section class="case" id="intro"><div class="eyebrow">🗂️ AKTE: ADJEKTIVE</div><h2>Dein erster Einsatz</h2><p>Im Wörterwald sind wichtige Beschreibungen verschwunden. Nur echte Adjektiv-Detektive können die Spuren finden!</p><div class="note"><strong>Deine drei Beweise:</strong> Adjektive sagen, <b>wie etwas ist</b>. Du kannst <b>Gegenteile</b> finden und viele Adjektive <b>steigern</b>.</div><p>Sechs spannende Ermittlungsakten warten auf dich. Jede gelöste Aufgabe bringt Sterne.</p><button class="button" onclick="showCentral()">🔍 Ermittlungen starten →</button></section>
 <section class="case hidden" id="central"><div class="topline"><div><div class="eyebrow">🗃️ DETEKTIV-ZENTRALE</div><h2>Wähle deine Ermittlungsakte</h2></div><button class="button soft" onclick="showIntro()">← Einsatzbrief</button></div><div class="evidence"><span>🔎 Wie ist etwas?</span><span>↔️ Was ist das Gegenteil?</span><span>📈 Kann man es steigern?</span></div><div class="grid" id="missions"></div><p class="small">Deine Sterne werden auf diesem Gerät gespeichert. Jede Akte kann erneut gespielt werden.</p></section>
 <section class="case hidden" id="play"><div class="topline"><button class="button soft" onclick="showCentral()">← Zur Zentrale</button><span class="chip" id="round">Spur 1 von 5</span></div><div class="progress"><div id="bar"></div></div><div class="eyebrow" id="caseLabel"></div><h2 id="caseTitle"></h2><div class="note" id="instructions"></div><div id="activity"></div><div class="feedback" id="feedback" role="status"></div><div class="row"><button class="button hidden" id="check" onclick="checkText()">Spuren überprüfen ✓</button><button class="button hidden" id="next" onclick="advance()">Nächste Spur →</button></div></section>
@@ -39,11 +51,11 @@ const missions=[
 ['Der Wald ist heute besonders ___.','dunkel',['dunkel','gehen','Wald']],
 ['Der kleine Detektiv trägt einen ___ Schal.','warmen',['warm','warmen','wärmen']],
 ['Die Katze ist ___ als die Maus.','größer',['groß','größer','am größten']],
-['Nach der Suche ist Pino sehr ___.','müde',['Müdigkeit','müde','schlafen']]]}
+['Nach der Suche ist Pit sehr ___.','müde',['Müdigkeit','müde','schlafen']]]}
 ];
 const $=id=>document.getElementById(id);let stars=0,progress={},mi=0,ti=0,locked=false,marked=new Set(),memory={};
-try{progress=JSON.parse(localStorage.getItem('adjektivPinoProgress')||'{}')}catch(e){}
-function save(){localStorage.setItem('adjektivPinoProgress',JSON.stringify(progress));updateTotal()}
+try{progress=JSON.parse(localStorage.getItem('adjektivPitProgress')||'{}')}catch(e){}
+function save(){localStorage.setItem('adjektivPitProgress',JSON.stringify(progress));updateTotal()}
 function updateTotal(){stars=Object.values(progress).reduce((a,b)=>a+(Number(b)||0),0);$('total').textContent='⭐ '+stars+' / 90 Sterne'}
 function screen(id){['intro','central','play'].forEach(s=>$(s).classList.toggle('hidden',s!==id));window.scrollTo({top:0,behavior:'smooth'})}
 function showIntro(){screen('intro')}function showCentral(){renderMissions();screen('central')}
@@ -53,6 +65,7 @@ function render(){locked=false;marked=new Set();const m=missions[mi];$('caseLabe
 if(m.type==='choice'||m.type==='fill'){let [q,options,right]=m.tasks[ti];if(m.type==='fill'){const correct=options.indexOf(right);right=correct} $('instructions').textContent=m.type==='fill'?'Ergänze den geheimen Polizeibericht mit dem richtigen Wort.':'Prüfe die Hinweise und wähle die richtige Antwort.';$('activity').innerHTML=`<h3 class="question">${q}</h3><div class="choices">${options.map((o,i)=>`<button class="choice" onclick="answer(${i},${right})">${o}</button>`).join('')}</div>`}
 if(m.type==='text'){let [txt,targets]=m.tasks[0];const target=new Set(targets.split('|'));const words=txt.match(/\S+/g);$('instructions').textContent='Markiere alle Adjektive, indem du auf die Wörter tippst. Es sind 10 Stück.';$('activity').innerHTML='<div class="words">'+words.map((w,i)=>`<button class="word" data-word="${w.replace(/[.,!?]/g,'').toLowerCase()}" onclick="toggleWord(${i})">${w}</button>`).join('')+'</div><p class="small">Tipp: Frage bei jedem Wort „Wie ist etwas?“</p>';$('check').classList.remove('hidden');window.textTargets=target}
 if(m.type==='memory'){let pairs=m.tasks;let deck=pairs.flatMap((p,i)=>p.map(w=>({w,pair:i})));deck.sort(()=>Math.random()-.5);memory={deck,flipped:[],matched:new Set(),tries:0};$('instructions').textContent='Finde sechs passende Gegenteile. Decke immer zwei Karten auf.';$('activity').innerHTML='<div class="grid" id="memGrid">'+deck.map((v,i)=>`<button class="choice" id="mem${i}" onclick="flip(${i})">❔</button>`).join('')+'</div>'}}
+}
 let sessionPoints=0;
 function answer(i,right){if(locked)return;locked=true;const buttons=[...$('activity').querySelectorAll('.choice')];buttons.forEach((b,j)=>{b.disabled=true;if(j===right)b.classList.add('good');else if(j===i)b.classList.add('bad')});if(i===right){sessionPoints+=3;$('feedback').textContent='🌟 Spur gesichert! Richtig erkannt.'}else{$('feedback').textContent='💛 Fast! Die richtige Spur ist grün markiert.'}showNext()}
 function showNext(){$('next').classList.remove('hidden')}
@@ -60,7 +73,46 @@ function toggleWord(i){if(locked)return;const b=$('activity').querySelectorAll('
 function checkText(){if(locked)return;locked=true;let correct=0;const bs=[...$('activity').querySelectorAll('.word')];bs.forEach((b,i)=>{const target=window.textTargets.has(b.dataset.word);if(target)b.classList.add('good');else if(marked.has(i))b.classList.add('bad');if(target&&marked.has(i))correct++});sessionPoints=Math.round(correct/window.textTargets.size*15);$('feedback').textContent=`🔎 ${correct} von ${window.textTargets.size} Adjektiven entdeckt. Grün zeigt die richtigen Fundstücke.`;$('check').classList.add('hidden');showNext()}
 function flip(i){if(locked||memory.matched.has(i)||memory.flipped.includes(i)||memory.flipped.length===2)return;let b=$('mem'+i);b.textContent=memory.deck[i].w;b.classList.add('selected');memory.flipped.push(i);if(memory.flipped.length===2){let [a,c]=memory.flipped;memory.tries++;if(memory.deck[a].pair===memory.deck[c].pair){memory.matched.add(a);memory.matched.add(c);$('mem'+a).classList.add('good');$('mem'+c).classList.add('good');memory.flipped=[];$('feedback').textContent='🌟 Ein Gegensatz-Paar gefunden!';$('round').textContent=memory.matched.size/2+' von 6 Paaren';$('bar').style.width=memory.matched.size/12*100+'%';if(memory.matched.size===12){sessionPoints=Math.max(5,15-Math.max(0,memory.tries-6));locked=true;$('feedback').textContent='🎉 Alle sechs Paare gefunden!';showNext()}}else{locked=true;setTimeout(()=>{[a,c].forEach(j=>{$('mem'+j).textContent='❔';$('mem'+j).classList.remove('selected')});memory.flipped=[];locked=false},850)}}}
 function advance(){const m=missions[mi];if(m.type==='memory'||m.type==='text'){ti=m.type==='memory'?6:1}else{ti++}render()}
-function finish(){const m=missions[mi];let earned=m.type==='memory'||m.type==='text'?sessionPoints:sessionPoints;progress[mi]=Math.max(progress[mi]||0,earned);save();$('round').textContent='Akte abgeschlossen';$('bar').style.width='100%';$('instructions').textContent='';$('activity').innerHTML=`<div class="report"><h2>🎉 Akte gelöst!</h2><p>Detektiv Pino ist stolz auf dich. Du hast <strong>${earned} von 15 Sternen</strong> in dieser Akte gesammelt.</p><p>🗂️ Der Ermittlungsbericht wurde in deiner Zentrale abgelegt.</p><button class="button" onclick="showCentral()">Zur Detektiv-Zentrale →</button></div>`}
+function finish(){const m=missions[mi];let earned=m.type==='memory'||m.type==='text'?sessionPoints:sessionPoints;progress[mi]=Math.max(progress[mi]||0,earned);save();$('round').textContent='Akte abgeschlossen';$('bar').style.width='100%';$('instructions').textContent='';$('activity').innerHTML=`<div class="report"><h2>🎉 Akte gelöst!</h2><p>Detektiv Pit ist stolz auf dich. Du hast <strong>${earned} von 15 Sternen</strong> in dieser Akte gesammelt.</p><p>🗂️ Der Ermittlungsbericht wurde in deiner Zentrale abgelegt.</p><button class="button" onclick="showCentral()">Zur Detektiv-Zentrale →</button></div>`}
 function showEvidence(){alert('Die drei Beweise: 1. Adjektive beschreiben, wie etwas ist. 2. Viele Adjektive haben Gegenteile. 3. Viele Adjektive lassen sich steigern.')}
 updateTotal();const hash=location.hash;if(hash==='#start'||hash==='#adjektive')showCentral();
-</script></body></html>
+</script>
+<script>
+(function(){
+const page=location.pathname.split('/').pop()||'index.html';
+const guides={
+'index.html':[
+'Hallo! Ich bin Pit, dein Lernpinguin! 🐧 Schön, dass du da bist. Such dir ein Fach auf der großen Startseite aus.',
+'Tipp: Bei Deutsch wirst du zum Wörter-Detektiv. Bei Mathe warten spannende Zahlenspiele auf dich!',
+'Du kannst jederzeit ein neues Fach wählen. Ich bin dabei! 🌟'],
+'deutsch.html':[
+'Willkommen im Wörterland! 📖 Wähle ein Abenteuer aus. Möchtest du lieber Adjektive erforschen oder Verben entdecken?',
+'Wenn du auf ein Spiel tippst, beginnt dein Abenteuer. Viel Spaß beim Forschen!'],
+'adjektiv-detektive.html':[
+'Pssst! 🔎 Ich bin Pit, dein Detektiv-Partner. Wir suchen heute geheime Wiewörter! Lies zuerst unsere Ermittlungsakte.',
+'Prima! In der Zentrale warten sechs Fälle. Du darfst selbst aussuchen, welche Spur du zuerst verfolgst.',
+'Bei jeder Spur gilt: Lies die Aufgabe genau. Du kannst in Ruhe nachdenken. Fehler sind erlaubt!',
+'Wenn du einen Fall löst, bekommst du Sterne. Ich bin stolz auf dich! ⭐'],
+'mathe.html':[
+'Hallo, Zahlenforscher! 🔢 Ich bin Pit. Wähle zuerst deinen Zahlenraum: 10, 20 oder 100.',
+'Super! Jetzt kannst du Zahlen sehen, zeigen, hören und sprechen. Such dir eine Übung aus.',
+'Mein Tipp: Nutze die Punkte zum Zählen und prüfe deine Lösung. Du schaffst das! 🌟']
+};
+const lines=guides[page]||guides['index.html'];let pos=0;
+const el=document.createElement('aside');el.id='pit-guide';el.setAttribute('aria-label','Pit, dein Lernbegleiter');
+el.innerHTML='<div class="pit-bubble" aria-live="polite"><strong>🐧 Pit hilft dir</strong><span id="pit-message"></span><div class="pit-actions"><button type="button" id="pit-next">Weiter →</button><button type="button" class="pit-close" id="pit-hide">Schließen</button></div></div><button class="pit-face" type="button" aria-label="Pit öffnen">🐧</button>';
+document.body.appendChild(el);
+const msg=el.querySelector('#pit-message');function say(n){pos=Math.max(0,Math.min(n,lines.length-1));msg.textContent=lines[pos];el.querySelector('#pit-next').textContent=pos===lines.length-1?'Nochmal ↻':'Weiter →'}
+say(0);
+el.querySelector('#pit-next').addEventListener('click',()=>say(pos===lines.length-1?0:pos+1));
+el.querySelector('#pit-hide').addEventListener('click',()=>el.classList.add('pit-minimized'));
+el.querySelector('.pit-face').addEventListener('click',()=>el.classList.toggle('pit-minimized'));
+document.addEventListener('click',e=>{
+const target=e.target.closest('button,a');if(!target||el.contains(target))return;
+if(page==='index.html'&&target.matches('[data-subject="de"]')){say(1);el.classList.remove('pit-minimized')}
+if(page==='adjektiv-detektive.html'&&/Ermittlungen starten|Loslegen|Nächste Spur|Zur Zentrale|ermitteln/i.test(target.textContent)){say(/Ermittlungen starten|Zur Zentrale/i.test(target.textContent)?1:2);el.classList.remove('pit-minimized')}
+if(page==='mathe.html'&&/10|20|100|starten|üben/i.test(target.textContent)&&pos===0){say(1);el.classList.remove('pit-minimized')}
+},true);
+})();
+</script>
+</body></html>
